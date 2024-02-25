@@ -8,6 +8,7 @@ const mongoose = require('mongoose');
 
 //Import Routes
 const postsRoute = require('./routes/posts');
+//Middleware
 
 app.use('/posts',postsRoute);
 
@@ -18,9 +19,7 @@ app.get('/', (req, res) => {
     res.send('We are on Home');
 });
 
-app.get('/posts', (req, res) => {
-    res.send('We are on Posts');
-});
+
 
 // Connect to DB
 
