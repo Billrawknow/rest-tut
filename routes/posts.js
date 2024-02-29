@@ -4,24 +4,36 @@ const router = express.Router();
 
 const Post = require('../models/Post');
 
-router.get ('/', (req, res) => {
-    res.send('We are on Posts');
+router.get ('/', async (req, res) => {
+    try {
+        catch (error) {
+            
+        }
+        
+        
+        
+        
+        {
+
+        }
+    }
+    
 });
 
- router.post ('/', (req, res) => {
+ router.post ('/', async (req, res) => {
     const post = new Post ({
         title: req.body.title,
         description: req.body.description
     });
 
-    post.save()
-    .exec()
-    .then(data=>{
-        res.json(data);
-    })
-    .catch(err =>{
-        res.json({message:err})
-    })
+    try {
+    const savedPost = await post.save();
+    restart.json(savedPost);
+     } catch (err) {
+        res.json ({ message:err});
+        
+     }
+   
 });
 
 
